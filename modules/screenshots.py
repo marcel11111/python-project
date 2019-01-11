@@ -11,3 +11,5 @@ def run(**args):
     print ("Screenshot saved to screenshot.png.")
  else:
     print ("Unable to get the screenshot.")
+
+ return (pb)
